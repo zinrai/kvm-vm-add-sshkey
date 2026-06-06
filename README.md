@@ -1,12 +1,11 @@
-# kvm-install-sshkey
+# kvm-vm-add-sshkey
 
-`kvm-install-sshkey` is a command-line tool designed to install SSH public keys into KVM (Kernel-based Virtual Machine) virtual machines.
+`kvm-vm-add-sshkey` is a command-line tool that adds an SSH public key to a KVM (Kernel-based Virtual Machine) virtual machine by writing directly to the guest disk while the VM is stopped.
 
 ## Features
 
-- Installs SSH public keys into specified KVM virtual machines
+- Appends an SSH public key to the specified user's `.ssh/authorized_keys` file inside the guest
 - Verifies that the target virtual machine is stopped before proceeding
-- Adds the public key to the specified user's `.ssh/authorized_keys` file
 - Sets appropriate ownership and permissions for SSH files
 
 ## Notes
@@ -28,13 +27,13 @@ $ go build
 Basic usage:
 
 ```
-$ kvm-install-sshkey [options] VM_NAME
+$ kvm-vm-add-sshkey [options] VM_NAME
 ```
 
 Example:
 
 ```
-$ kvm-install-sshkey -user myuser -key /path/to/my/key.pub my-vm
+$ kvm-vm-add-sshkey -user myuser -key /path/to/my/key.pub my-vm
 ```
 
 ## License

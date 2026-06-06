@@ -16,7 +16,7 @@ func main() {
 	flag.Parse()
 
 	if flag.NArg() != 1 {
-		fmt.Println("Usage: kvm-install-sshkey [options] VM_NAME")
+		fmt.Println("Usage: kvm-vm-add-sshkey [options] VM_NAME")
 		flag.PrintDefaults()
 		os.Exit(1)
 	}
