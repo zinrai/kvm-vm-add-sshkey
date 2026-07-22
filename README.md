@@ -14,14 +14,6 @@
 - Ensure that the target virtual machine is stopped before running this tool.
 - If an `authorized_keys` file already exists, the new public key will be appended to it. Existing keys will be preserved.
 
-## Installation
-
-Build the tool:
-
-```
-$ go build
-```
-
 ## Usage
 
 Basic usage:
