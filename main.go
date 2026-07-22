@@ -12,8 +12,14 @@ import (
 func main() {
 	username := flag.String("user", "", "Username on the virtual machine (optional)")
 	keyPath := flag.String("key", "", "Path to the SSH public key file (default: $HOME/.ssh/id_rsa.pub)")
+	showVersion := flag.Bool("version", false, "Print version information and exit")
 
 	flag.Parse()
+
+	if *showVersion {
+		printVersion()
+		os.Exit(0)
+	}
 
 	if flag.NArg() != 1 {
 		fmt.Println("Usage: kvm-vm-add-sshkey [options] VM_NAME")
